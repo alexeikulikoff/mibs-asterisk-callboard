@@ -422,9 +422,11 @@ public class App extends JFrame {
 			
 			setExtendedState(JFrame.MAXIMIZED_BOTH); 
 			setUndecorated(true);
-			//setMaximumSize(DimMax);
-			//setExtendedState(MAXIMIZED_BOTH);
+			setMaximumSize(DimMax);
+			setExtendedState(MAXIMIZED_BOTH);
 
+			//setSize(Toolkit.getDefaultToolkit().getScreenSize());
+			
 			/*
 				
 			*/
@@ -446,6 +448,7 @@ public class App extends JFrame {
 					UIManager.setLookAndFeel("javax.swing.plaf.metal.MetalLookAndFeel");
 					if (args != null && args.length > 0 ) {
 						App app = new App(args[0]);
+						
 						app.setVisible(true);
 					}else {
 						logger.error("Error! No configuration file provided!");
