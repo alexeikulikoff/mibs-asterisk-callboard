@@ -1,6 +1,7 @@
 package com.mibs.callboard;
 
 import java.awt.Dimension;
+import java.awt.GraphicsDevice;
 import java.awt.Toolkit;
 import java.awt.event.WindowEvent;
 import java.io.BufferedReader;
@@ -422,9 +423,14 @@ public class App extends JFrame {
 			
 			setExtendedState(JFrame.MAXIMIZED_BOTH); 
 			setUndecorated(true);
+			setResizable(true);
 			setMaximumSize(DimMax);
 			setExtendedState(MAXIMIZED_BOTH);
 
+			GraphicsDevice device =getGraphicsConfiguration().getDevice();
+		    boolean result = device.isFullScreenSupported();
+		    device.setFullScreenWindow(this); 
+		    System.out.println( result );
 			//setSize(Toolkit.getDefaultToolkit().getScreenSize());
 			
 			/*
